@@ -1,15 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Roboto+Slab:wght@100;200;400;700&display=swap');
+/* Optimized initially for 4k displays 2560x1755 */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "EB Garamond", serif;
+  font-family: 'Roboto Slab', serif;
+
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: calc(15px + 0.390625vw);
+  
 }
+
+
 
 li {
   list-style-type: none;
@@ -25,7 +32,7 @@ a {
 }
 
 body {
-  background-color: #f6aa1c;
+  background-color: white;
 }
 
 h2 {
@@ -33,40 +40,121 @@ h2 {
   color: #941b0c;
 }
 
-
 /* link hover effect */
 
 .link__hover-effect {
-    position: relative;
+  position: relative;
 }
 
 .link__hover-effect::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    height: 2px;
-    width: 0;
-    right: 0;
-    background-color: #320d03;
-    transition: all 300ms ease;
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  height: 2px;
+  width: 0;
+  right: 0;
+  background-color: #320d03;
+  transition: all 300ms ease;
 }
 .link__hover-effect--black::after {
-    background-color: #320d03;
+  background-color: #320d03;
 }
 
 .link__hover-effect:hover::after {
-    left: 0;
-    width: 100%;
-
-
+  left: 0;
+  width: 100%;
 }
+
+/* 
+Shop men, shop women
+
+*/
+
+.shop__container {
+  max-width: 2650px;
+  width: 100vw;
+  
+
+  display: flex;
+  justify-content: center;
+}
+
+.shop__imgs-row-1 {
+  width: 50%;
+  position: relative;
+
+  transition: all 550ms ease;
+}
+.shop__imgs-row-2 {
+
+  width: 50%;
+  position: relative;
+
+  transition: all 550ms ease;
+}
+
+.shop__img-2:hover {
+  filter: brightness(40%) grayscale(70%);
+}
+
+.shop__imgs-row-1:hover .shop__women {
+  transform: scale(1.5);
+  top: 45%;
+  left: 60%;
+  
+}
+.shop__imgs-row-2:hover .shop__men {
+  transform: scale(1.5);
+  top: 45%;
+  left: 25%;
+  
+}
+
+.shop__imgs-row-1:hover .shop__img-1 {
+  filter: brightness(40%) grayscale(70%);
+}
+.shop__imgs-row-2:hover .shop__img-2 {
+  filter: brightness(40%) grayscale(70%);
+}
+
+.shop__img-1 {
+  width: 100%;
+  filter: brightness(75%) grayscale(20%);
+  transition: all 600ms ease;
+  height: 100%;
+}
+.shop__img-2 {
+  height: 100%;
+  width: 100%;
+  filter: brightness(75%) grayscale(20%);
+  transition: all 600ms ease;
+}
+
+.shop__women {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  
+  transition: all 550ms ease;
+}
+.shop__men {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  transition: all 550ms ease;
+}
+.shop__title {
+  color: white;
+  font-weight: 300;
+  font-size: 3vw;
+}
+
 
 /* Landing page */
-
-#landing-page {
-  min-height: 100vh;
-  width: 1200px;
-}
 
 .header {
   color: #941b0c;
@@ -106,175 +194,174 @@ h2 {
   padding-top: 72px;
 }
 
-
 /* NAVBAR */
 
-.title {
-  position: absolute;
-  font-size: 32px;
-  padding-left: 80px;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 2560px;
+  width: 100vw;
+  height: 120px;
+  background-color: #f8c462;
   padding-top: 32px;
 }
 
-.sub-title {
+.brand {
+  color: #941b0c;
+  position: relative;
+}
+
+.brand__name {
+  font-family: "EB Garamond", serif ;
+  font-size: 48px;
+  padding-bottom: 20px;
+
+}
+
+.brand__name-sub {
   position: absolute;
-  font-size: 20px;
-  padding-top: 76px;
-  padding-left: 120px;
-}
-nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 150px;
-  padding-right: 90px;
+  font-family: "EB Garamond", serif ;
+  top: 53%;
+  left: 11%;
+  font-size: 24px;
+  
+  
+ 
 }
 
-
-.nav__link--list {
+.nav__link--list-left {
   display: flex;
+  margin-left: 40px;
+}
+
+.nav__link--list-right {
+  display: flex;
+  margin-right: 90px;
 }
 
 .nav__link {
-  margin: 0 32px;
+  padding: 0 32px;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 /* Slideshow */
 .slideshow-container {
-   
-    max-width: 500px;
-   
-    position: relative;
-    margin: 175px auto;
-    margin-left: 80px;
-    
-    
+  max-width: 1200px;
+  width: 50%;
+  position: relative;
+  margin: 175px auto;
 }
 
 .slideshow__img {
-    width: 100%;
+  width: 100%;
 }
 
-.mySlides {
-    
-
-}
-
-
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    width: auto;
-    margin-top: -10px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 32px;
-    transition: 300ms ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  margin-top: -10px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+  transition: 300ms ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 .next {
-    right:0;
-    border-radius: 3px 0 0 3px;
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, .8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .caption {
-    color: #941b0c;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 8px 12px;
-    position: absolute;
-    width: 100%;
-    text-align: center;
+  color: #941b0c;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 8px 12px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
 }
 
 .numbertext {
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-    background-color: black;
-  }
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  background-color: black;
+}
 
 .dot {
-    position: relative;
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 70%;
-    display: none;
-    transition: background-color 0.6s ease;
-  }
+  position: relative;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 70%;
+  display: none;
+  transition: background-color 0.6s ease;
+}
 
-  .active, .dot:hover {
-    background-color: #717171;
-  }
-  
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
+.active,
+.dot:hover {
+  background-color: #717171;
+}
 
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .slideshow__title {
-    position: absolute;
-    left: 11%;
-    
-    padding-top: 135px;
-    color: #941b0c;
-   
+  position: absolute;
+  top: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #941b0c;
 }
 
-.row {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    padding-left: 40px;
-   
-    
-    
-}
 .story {
-   margin-right: 250px;
-   margin-top: 175px;
-   position: absolute;
-   max-width: 30%;
-
-    
+  margin-right: 250px;
+  margin-top: 175px;
+  position: absolute;
+  max-width: 30%;
 }
 .collections__title {
-    padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
-.collection{
-    margin: 16px 0;
-    text-align: center;
+.collection {
+  margin: 16px 0;
+  text-align: center;
 }
 /* Shop section */
 
 #shop {
-    display: flex;
-    justify-content: center;
-    margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
 }
-
